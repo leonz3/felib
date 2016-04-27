@@ -1,0 +1,25 @@
+
+@mixin scroll {
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+
+@mixin tapColor($val){
+	-webkit-tap-highlight-color: $val;
+}
+
+@mixin selectNone{
+    -webkit-touch-callout: none;
+    user-select: none;
+}
+
+@mixin resetInput($type: none){
+	-webkit-appearance: $type;
+	@if $type == none {
+		background: transparent;
+		border:0;
+		outline:0;
+		border-radius:0;
+		box-shadow:none;
+	}
+}

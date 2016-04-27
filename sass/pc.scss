@@ -1,0 +1,29 @@
+@import './mixins';
+
+body,article,section,nav,footer,header,aside,div,p,h1,h2,h3,h4,h5,h6,a,em,span,i,strong,del,ul,ol,li,input,select,textarea,dl,dt,dd,table,tr,th,td{
+	margin:0;padding:0;font-style:normal;font-family:"Microsoft YaHei",Arial,Helvetica,Tahoma,sans-serif;
+	@include border-box;
+}
+h1,h2,h3,h4,h5{
+	font-weight:normal;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+ol,ul {
+	list-style: none;
+}
+h1, h2, h3, h4, h5, h6{
+	font-weight: normal;
+	font-size: 100%;
+}
+a{
+	text-decoration: none;
+}
+a,em,span,i,strong,del{
+	font-size:inherit;
+	color:inherit;
+	line-height:inherit;
+	font-style: normal;
+}

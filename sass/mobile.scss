@@ -1,0 +1,51 @@
+@import './mixins';
+
+html{
+	font-size: 10px;
+	font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+body,article,section,nav,footer,header,aside,div,p,h1,h2,h3,h4,h5,h6,a,em,span,i,strong,del,ul,ol,li,label,input,select,textarea,dl,dt,dd,table,tr,th,td,form{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+body{
+	margin:0 auto;
+	min-width:320px;
+	max-width:640px;
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-webkit-text-size-adjust:none;
+	@include tapColor(transparent);
+}
+h1,h2,h3,h4,h5{
+	font-weight:normal;
+}
+table {
+	border-collapse: collapse;
+	/* border-spacing: 0; */
+	// table-layout: fixed;
+}
+ul{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+a,em,span,i,strong,del{
+	font-size:inherit;
+	color:inherit;
+	line-height:inherit;
+}
+em{
+	font-style:normal;
+}
+[data-before]:before{
+	content:""attr(data-before)"";
+}
+[data-after]:after{
+	content:""attr(data-after)"";
+}

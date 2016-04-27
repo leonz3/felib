@@ -1,0 +1,19 @@
+
+@mixin setArrow($direction, $size, $color: #ddd, $width: 1px){
+	display: inline-block;
+	width: $size;
+	height: $size;
+	border-style: solid;
+	border-color: $color;
+	border-width: $width $width 0 0;
+	transform-origin:center center;
+	@if $direction == right {
+		transform: rotate(45deg);
+	}@else if $direction == left {
+		transform: rotate(-135deg);
+	}@else if $direction == up {
+		transform: rotate(-45deg);
+	}@else if $direction == down {
+		transform: rotate(135deg);
+	}
+}

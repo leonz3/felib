@@ -1,0 +1,27 @@
+
+
+@mixin ellipsis($line: 1, $width: auto){
+	@if $width != auto {
+		width: $width;
+	}
+	@if $line == 1 {
+		white-space:nowrap;
+	} @else {
+		display: -webkit-box;
+		display: -moz-box;
+		word-break: break-all;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: $line;
+	}
+	overflow: hidden;
+	text-overflow:ellipsis;
+}
+
+@mixin multiLine{
+	word-wrap:break-word;
+	word-break:break-all;
+}
+
+@mixin singleLine{
+	white-space: nowrap;
+}

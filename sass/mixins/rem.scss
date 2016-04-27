@@ -1,0 +1,28 @@
+
+$medias: (0, 320, 10),
+		(321, 375, 11),
+		(376, 414, 12),
+		(415, 639, 15),
+		(640, 719, 20),
+		(720, 749, 22.5),
+		(750, 799, 23.5),
+		(800, 0, 25);
+@mixin setRem($start, $end){
+	@each $min, $max, $size in $medias{
+		@if $start <= $min and $end >= $max{
+			@if $min == 0 {
+				@media screen and (max-width: $max){
+					html{ font-size: $size; }
+				}
+			} @else if $max == 0 {
+				@media screen and (min-width: $min){
+					html{ font-size: $size; }
+				}
+			} @else {
+				@media screen and (min-width: $min) and (max-width: $max){
+					html{ font-size: $size; }
+				}
+			}
+		}
+	}
+}

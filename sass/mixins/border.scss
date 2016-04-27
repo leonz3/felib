@@ -1,0 +1,71 @@
+
+
+@mixin borderTop($color: #ddd, $width: 1px) {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: $width;
+    background: $color;
+    transform-origin: 0 0;
+    transform: scaleY(0.5);
+}
+
+@mixin borderBottom($color: #ddd, $width: 1px) {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: $width;
+    background: $color;
+    transform-origin: 0 100%;
+    transform: scaleY(0.5);
+}
+
+@mixin borderLeft($color: #ddd, $width: 1px) {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: $width;
+    height: 100%;
+    background: $color;
+    transform-origin: 0 0;
+    transform: scaleX(0.5);
+}
+
+@mixin borderRight($color: #ddd, $width: 1px) {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: $width;
+    height: 100%;
+    background: $color;
+    transform-origin: 100% 0;
+    transform: scaleX(0.5);
+}
+
+//frozenUI solution
+@mixin border($color: #ddd, $width: 1px){
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(left bottom, left top, color-stop((2px / $width), rgba(0, 0, 0, 0)), color-stop(.5, $color)),
+        linear-gradient(left top, left bottom, color-stop((2px / $width), rgba(0, 0, 0, 0)), color-stop(.5, $color)),
+        linear-gradient(right top, left top, color-stop((2px / $width), rgba(0, 0, 0, 0)), color-stop(.5, $color)),
+        linear-gradient(left top, right top, color-stop((2px / $width), rgba(0, 0, 0, 0)), color-stop(.5, $color));
+    background-size: 100% $width,$width 100% ,100% $width, $width 100%;
+    background-repeat: no-repeat;
+    background-position: top, right, bottom, left;
+    padding: $width;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio : 2){
+}

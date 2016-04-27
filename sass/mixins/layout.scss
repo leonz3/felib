@@ -1,0 +1,33 @@
+
+@mixin inlineBlock($align: top){
+	display:inline-block;
+	vertical-align:$align;
+}
+
+@mixin centerBlock{
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@mixin clearfix{
+	&:after {
+		content: '';
+		display:table;
+		clear:both;
+	}
+}
+
+@mixin fixedTop{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
+
+@mixin fixedBottom{
+	position: fixed;
+	left:0;
+	bottom:0;
+	width:100%;
+}
