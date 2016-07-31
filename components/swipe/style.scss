@@ -1,0 +1,23 @@
+.swipe{
+    position:relative;z-index: 9;visibility: hidden;font-size:0;overflow:hidden;
+    >.swipe-wrap {
+        overflow: hidden;bottom:0;
+        >a{
+            float:left;width:100%;position: relative;
+            >img{
+                width:100%;height:auto;
+            }
+        }
+    }
+    >.swipe-cursor{
+        position: absolute;bottom:8px;width:100%;text-align:center;
+        >ul{
+            li{
+                display: inline-block;margin-left:4px;width:7px;height:7px;border-radius:100%;background:rgba(0,0,0,.4);
+                &.active{
+                    background:rgba(0,0,0,1);
+                }
+            }
+        }
+    }
+}

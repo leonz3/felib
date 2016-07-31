@@ -1,6 +1,5 @@
 
-export default (src, callback) => {
-
+var img2Base64 = function(src, callback) {
 	var img = new Image(),
 		canvas = document.createElement('canvas'),
 		context = canvas.getContext('2d');
@@ -11,5 +10,6 @@ export default (src, callback) => {
 		callback && callback.call(null, canvas.toDataURL("image/png"));
 	};
 	img.src = src;
-
 };
+
+export default img2Base64;

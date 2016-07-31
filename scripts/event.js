@@ -1,4 +1,19 @@
 
+
+var on = function(type, handler){
+    
+};
+
+var off = function(){
+
+};
+
+var trigger = function(){
+
+};
+
+
+
 // var Events = {
 // 	HTML: {
 // 		events: ['click', 'dblclick', 'change', 'scroll'],
@@ -28,3 +43,9 @@
 // 	ev[Events[type]['init']](type, false, true);
 // 	elem.dispatchEvent(ev);
 // };
+
+export {
+    on,
+    off,
+    trigger
+}

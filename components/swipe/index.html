@@ -1,61 +1,20 @@
-<style>
-.swipe{
-    position:relative;z-index: 9;visibility: hidden;font-size:0;overflow:hidden;
-    >.swipe-wrap {
-        overflow: hidden;bottom:0;
-        >a{
-            float:left;width:100%;position: relative;
-            >img{
-                width:100%;height:auto;
-            }
-        }
-    }
-    >.swipe-cursor{
-        position: absolute;bottom:8px;width:100%;text-align:center;
-        >ul{
-            li{
-                display: inline-block;margin-left:4px;width:7px;height:7px;border-radius:100%;background:rgba(0,0,0,.4);
-                &.active{
-                    background:rgba(0,0,0,1);
-                }
-            }
-        }
-    }
-}
-</style>
+<!--
 
-<template>
-	<div class="swipe">
-		<div class="swipe-wrap">
-			<a href="javascript:;">
-				<img src="#">
-			</a>
-			<a href="javascript:;">
-				<img src="#">
-			</a>
-			<a href="javascript:;">
-				<img src="#">
-			</a>
-		</div>
+	@require('style.scss');
+	@require('swipe.min.js');
+	@require('script.js');
+
+-->
+<div class="swipe">
+	<div class="swipe-wrap">
+		<a href="javascript:;">
+			<img src="#">
+		</a>
+		<a href="javascript:;">
+			<img src="#">
+		</a>
+		<a href="javascript:;">
+			<img src="#">
+		</a>
 	</div>
-</template>
-
-<script src="swipe.min.js"></script>
-<script>
-	~function(){
-		var swipe = document.querySelector('.swipe');
-		var length = swipe.querySelectorAll('img').length;
-		var cursor = document.createElement('div');
-		cursor.classList.add('swipe-cursor');
-		cursor.innerHTML = '<ul><li class="active">' + new Array(length).join('</li><li>') + '</li></ul>';
-		swipe.appendChild(cursor);
-		new Swipe(swipe, {
-		    auto: 2500,
-		    continuous: true,
-		    callback: function(i) {
-		        swipe.querySelector('.active').classList.remove('active');
-		        swipe.querySelectorAll('li')[2 === length ? i % 2 : i].classList.add('active');
-		    }
-		});
-	}();
-</script>
+</div>

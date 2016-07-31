@@ -1,4 +1,7 @@
-//reference 'sass/layer.scss'
+/**
+ * 移动端弹出层
+ * @requires    'sass/layer.scss'
+ */
 
 var Layer = {
     el: null ,
@@ -66,8 +69,11 @@ var Layer = {
     },
     resize: function() {
         var maxHeight = window.innerHeight;
-        if (this.el.classList.contains('util-layer-bench'))
-            maxHeight = maxHeight - this.el.querySelector('.util-layer-action').offsetHeight - this.el.querySelector('.util-layer-title').offsetHeight;
+        if (this.el.classList.contains('util-layer-bench')){
+            var title = this.el.querySelector('.util-layer-title');
+            var action = this.el.querySelector('.util-layer-action');
+            maxHeight = maxHeight - (title ? title.offsetHeight : 0) - (action ? action.offsetHeight : 0);
+        }
         else {
             if (this.el.classList.contains('util-layer-capion')) return;
             maxHeight = .85 * maxHeight - 92;
@@ -92,7 +98,7 @@ var Layer = {
             return this.init.bind(this, item)
         }
     });
-}),
+});
 
 Object.defineProperty(Layer, 'capion', {
     get: function() {

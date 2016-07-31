@@ -1,3 +1,4 @@
+
 var serialize = function (args) {
     var arr = [];
     for (var key in args) {
@@ -32,7 +33,13 @@ var ajax = function(options){
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
-                success && success(xhr.responseText);
+                if(success){
+                    if(dataType === 'json'){
+                        success(JSON.parse(xhr.responseText));
+                    }else{
+                        success(xhr.responseText);
+                    }
+                }
             } else {
                 error && error(xhr);
             }
