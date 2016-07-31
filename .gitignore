@@ -1,3 +1,5 @@
 
 # plan to do files
-scripts/*.js
+
+scripts/event.js
+scripts/touch.js
