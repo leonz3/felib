@@ -17,6 +17,7 @@ module.exports = {
         publicPath: ''
     },
     resolve: {
+        modulesDirectories: ['node_modules'],
         extensions: ['', '.js', '.jsx', 'css', 'scss', 'html'],
         alias: {
             '$': 'jquery'
@@ -85,7 +86,7 @@ module.exports = {
             'process.env': {
                 NODE_ENV: 'development'
             }
-        })),
+        }),
 
         //js压缩
         new webpack.optimize.UglifyJsPlugin({
